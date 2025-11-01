@@ -1,0 +1,1298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valor Cup 2025 - Mobile Legends Tournament</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0f172a;
+            --bg-darker: #0a0e27;
+            --blue-electric: #00d4ff;
+            --blue-cyan: #06b6d4;
+            --gold-amber: #f59e0b;
+            --text-white: #f1f5f9;
+            --text-gray: #cbd5e1;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-dark);
+            color: var(--text-white);
+            overflow-x: hidden;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 14, 39, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--blue-electric);
+            text-shadow: 0 0 10px var(--blue-electric);
+        }
+
+       .hero {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+}
+
+/* ============================================ */
+/* PARALLAX BACKGROUND IMAGE                   */
+/* TO CHANGE: Replace the url('...') below     */
+/* with your background image path             */
+/* Example: url('images/hero-bg.jpg')          */
+/* ============================================ */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('https://via.placeholder.com/1920x1080/0a0e27/00d4ff?text=REPLACE+WITH+YOUR+BACKGROUND+IMAGE');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.3;
+    z-index: 0;
+    transform: translateZ(0);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    z-index: 1;
+}
+
+        #particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 6s infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) translateX(0); }
+            50% { transform: translateY(-20px) translateX(10px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            animation: fadeInUp 1s ease-out;
+        }
+        /* ============================================ */
+/* PARALLAX BACKGROUND IMAGE                   */
+/* TO CHANGE: Replace the url('...') below     */
+/* with your background image path             */
+/* Example: url('images/hero-bg.jpg')          */
+/* ============================================ */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120%;
+    background-image: url('estes blck.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.3;
+    z-index: 0;
+    transform: translateZ(0);
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(10, 14, 39, 0.8) 0%, rgba(15, 23, 42, 0.9) 100%);
+    z-index: 1;
+}
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 6rem;
+            background: linear-gradient(135deg, var(--blue-electric), var(--gold-amber));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+            margin-bottom: 1rem;
+            letter-spacing: 4px;
+        }
+
+        .slogan {
+            font-size: 1.8rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, var(--blue-electric), var(--blue-cyan));
+            color: white;
+            padding: 1rem 3rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 40px rgba(0, 212, 255, 0.8);
+        }
+
+        .carousel-section {
+            padding: 4rem 2rem;
+            background: var(--bg-darker);
+        }
+
+        .carousel {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            position: relative;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+        }
+
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 14, 39, 0.95));
+            padding: 2rem;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: var(--blue-electric);
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 212, 255, 0.3);
+            border: none;
+            color: white;
+            font-size: 2rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-nav:hover {
+            background: rgba(0, 212, 255, 0.6);
+        }
+
+        .carousel-prev { left: 1rem; }
+        .carousel-next { right: 1rem; }
+
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--blue-electric), var(--gold-amber));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 3px;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+            color: var(--text-gray);
+        }
+
+        .event-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .detail-card {
+            background: rgba(6, 182, 212, 0.1);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+            border-color: var(--blue-electric);
+        }
+
+        .detail-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--gold-amber);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .rule-card {
+            background: rgba(10, 14, 39, 0.6);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--blue-electric);
+            transition: all 0.3s;
+        }
+
+        .rule-card:hover {
+            border-left-color: var(--gold-amber);
+            transform: translateX(10px);
+        }
+
+        .rule-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--blue-electric);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .rule-card ul {
+            list-style: none;
+            color: var(--text-gray);
+        }
+
+        .rule-card li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .rule-card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--gold-amber);
+        }
+
+        .leaderboard-container {
+            background: rgba(10, 14, 39, 0.6);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+        }
+
+        .prizes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .prize-card {
+            background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(245, 158, 11, 0.1));
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+
+        .prize-card:nth-child(1) { border-color: var(--gold-amber); }
+        .prize-card:nth-child(2) { border-color: var(--text-gray); }
+        .prize-card:nth-child(3) { border-color: #cd7f32; }
+
+        .prize-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        .prize-place {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            color: var(--blue-electric);
+            margin-bottom: 0.5rem;
+        }
+
+        .prize-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--gold-amber);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        th {
+            background: rgba(0, 212, 255, 0.2);
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.2rem;
+            color: var(--blue-electric);
+            letter-spacing: 1px;
+        }
+
+        tr:hover {
+            background: rgba(0, 212, 255, 0.1);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            cursor: pointer;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '🔍';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 3rem;
+            color: white;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: rgba(10, 14, 39, 0.6);
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .contact-card h3 {
+            font-family: 'Bebas Neue', sans-serif;
+            color: var(--blue-electric);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-card a {
+            color: var(--gold-amber);
+            text-decoration: none;
+        }
+
+        .contact-card a:hover {
+            text-decoration: underline;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--bg-darker);
+            padding: 3rem;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid var(--blue-electric);
+            box-shadow: 0 0 50px rgba(0, 212, 255, 0.5);
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background: none;
+            border: none;
+            color: var(--text-gray);
+            cursor: pointer;
+        }
+
+        .modal h2 {
+            margin-bottom: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--blue-electric);
+            font-weight: 600;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 10px;
+            background: rgba(10, 14, 39, 0.8);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--blue-electric);
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--blue-electric), var(--gold-amber));
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        /* SUCCESS POPUP STYLES */
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+        }
+
+        .popup-overlay.show {
+            display: block;
+        }
+
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: linear-gradient(135deg, var(--bg-darker), var(--bg-dark));
+            padding: 3rem 4rem;
+            border-radius: 25px;
+            border: 3px solid var(--gold-amber);
+            box-shadow: 0 0 80px rgba(245, 158, 11, 0.6), 0 0 120px rgba(0, 212, 255, 0.4);
+            z-index: 10001;
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+        }
+
+        .success-popup.show {
+            display: block;
+            animation: popupAppear 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes popupAppear {
+            0% {
+                transform: translate(-50%, -50%) scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-popup .popup-icon {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .success-popup h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--blue-electric);
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .success-popup .team-name-display {
+            font-size: 2rem;
+            color: var(--gold-amber);
+            font-weight: 700;
+            margin: 1rem 0;
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.5);
+        }
+
+        .success-popup p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .success-popup button {
+            background: linear-gradient(135deg, var(--blue-electric), var(--gold-amber));
+            border: none;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 2px;
+            transition: all 0.3s;
+        }
+
+        .success-popup button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.5);
+        }
+
+        /* Confetti Styles */
+        .confetti {
+            position: fixed;
+            width: 10px;
+            height: 10px;
+            background: var(--gold-amber);
+            animation: confetti-fall 3s linear forwards;
+            z-index: 10002;
+            pointer-events: none;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(0) rotateZ(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotateZ(720deg);
+                opacity: 0;
+            }
+        }
+
+        #confettiContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10003;
+            overflow: hidden;
+        }
+
+        footer {
+            background: var(--bg-darker);
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(0, 212, 255, 0.2);
+            color: var(--text-gray);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+            }
+
+            .slogan {
+                font-size: 1.2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .carousel-slide img {
+                height: 300px;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            .particle {
+                display: none;
+            }
+
+            .success-popup {
+                padding: 2rem;
+            }
+
+            .success-popup h2 {
+                font-size: 2rem;
+            }
+
+            .team-name-display {
+                font-size: 1.5rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#rules">Rules</a></li>
+            <li><a href="#leaderboard">Leaderboard</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <div id="particles"></div>
+        <div class="hero-content">
+            <!-- ============================================ -->
+            <!-- LOGO: Replace text with image if you want   -->
+            <!-- Example: <img src="images/logo.png" alt="Valor Cup 2025" style="max-width: 600px;"> -->
+            <!-- ============================================ -->
+            <h1 class="logo">VALOR CUP 2025</h1>
+            <p class="slogan">Unleash Your Legends!</p>
+            <button class="cta-button" onclick="openModal()">Enter the Arena!</button>
+        </div>
+    </section>
+
+    <div class="carousel-section">
+        <div class="carousel">
+            <button class="carousel-nav carousel-prev" onclick="moveCarousel(-1)">❮</button>
+            <div class="carousel-track">
+                <!-- ============================================ -->
+                <!-- CAROUSEL IMAGE 1: Replace src below         -->
+                <!-- ============================================ -->
+                <div class="carousel-slide">
+                    <img src="pict 1.jpg" alt="2024 Champions">
+                    <div class="carousel-caption">Valor Cup 2024 Champions</div>
+                </div>
+                <!-- ============================================ -->
+                <!-- CAROUSEL IMAGE 2: Replace src below         -->
+                <!-- ============================================ -->
+                <div class="carousel-slide">
+                    <img src="pict 2.jpg" alt="Epic Moments">
+                    <div class="carousel-caption">Epic Moments</div>
+                </div>
+                <!-- ============================================ -->
+                <!-- CAROUSEL IMAGE 3: Replace src below         -->
+                <!-- ============================================ -->
+                <div class="carousel-slide">
+                    <img src="pict 3.jpg" alt="Top Teams">
+                    <div class="carousel-caption">Grand Final</div>
+                </div>
+            </div>
+            <button class="carousel-nav carousel-next" onclick="moveCarousel(1)">❯</button>
+        </div>
+    </div>
+
+    <section id="about">
+        <h2>About the Event</h2>
+        <div class="about-content">
+            <p>Valor Cup 2025 is the ultimate Mobile Legends tournament designed to showcase the best student teams in the region. This prestigious event brings together talented players to compete for glory, prizes, and the title of champion. Whether you're a seasoned pro or an emerging talent, Valor Cup is your arena to prove your worth and unleash your legends!</p>
+            
+            <div class="event-details">
+                <div class="detail-card">
+                    <h3>Date</h3>
+                    <p>December 2025</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Venue</h3>
+                    <p>SCH</p>
+                </div>
+                <div class="detail-card">
+                    <h3>Format</h3>
+                    <p>5v5 Custom (DraftPick Mode)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="rules">
+        <h2>Games & Rules</h2>
+        <div class="rules-grid">
+            <div class="rule-card">
+                <h3>Tournament Format</h3>
+                <ul>
+                    <li>Single Elimination Bracket</li>
+                    <li>Best of 3 matches</li>
+                    <li>5v5 Team Battles</li>
+                    <li>Draft Pick Mode</li>
+                </ul>
+            </div>
+            <div class="rule-card">
+                <h3>Team Requirements</h3>
+                <ul>
+                    <li>Maximum 7 players per team</li>
+                    <li>5 main players + 2 substitutes</li>
+                    <li>Valid student ID required</li>
+                </ul>
+            </div>
+            <div class="rule-card">
+                <h3>Additional Rules</h3>
+                <ul>
+                    <li>Unique & appropriate nicknames</li>
+                    <li>Matches will not be restarted due to individual connection issues unless there's a server side problem.</li>
+                    <li>Any form toxic chat, flaming or provocation may be disqualified</li>
+                    <li>Fair play, cheats, or bug exploits are allowed. </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="leaderboard">
+        <h2>Leaderboard & Prizes</h2>
+        <div class="leaderboard-container">
+            <div class="prizes">
+                <div class="prize-card">
+                    <div class="prize-place">🥇 1st Place</div>
+                    <div class="prize-amount">Rp 2.500.000</div>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-place">🥈 2nd Place</div>
+                    <div class="prize-amount">Rp 1.650.000</div>
+                </div>
+                <div class="prize-card">
+                    <div class="prize-place">🥉 3rd Place</div>
+                    <div class="prize-amount">Rp 800.000</div>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; color: var(--blue-electric); font-family: 'Bebas Neue', sans-serif; font-size: 2rem; margin-bottom: 1rem;">Current Rankings</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Team Name</th>
+                        <th>Wins</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>505 Artics M.</td>
+                        <td>12</td>
+                        <td>3,450</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>777 Unlimited Luck</td>
+                        <td>11</td>
+                        <td>3,280</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>La Licer's Team</td>
+                        <td>10</td>
+                        <td>3,150</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>EposRRki</td>
+                        <td>9</td>
+                        <td>2,980</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>De' Starboy</td>
+                        <td>8</td>
+                        <td>2,750</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-grid">
+            <!-- ============================================ -->
+            <!-- GALLERY IMAGE 1: Replace src below             -->
+            <!-- ============================================ -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="SKRINSUT 4.jpg" alt="Gallery 1">
+            </div>
+            <!-- ============================================ -->
+            <!-- GALLERY IMAGE 2: Replace src below          -->
+            <!-- ============================================ -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="SKRINSUT 3.jpg" alt="Gallery 3">
+            </div>
+            <!-- ============================================ -->
+            <!-- GALLERY IMAGE 3: Replace src below          -->
+            <!-- ============================================ -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="SKRINSUT 5.jpg" alt="Gallery 4">
+            </div>
+            <!-- ============================================ -->
+            <!-- GALLERY IMAGE 4: Replace src below          -->
+            <!-- ============================================ -->
+            <div class="gallery-item" onclick="openLightbox(this)">
+                <img src="SKRINSUT 1.jpg" alt="Gallery 5">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <div class="contact-card">
+                <h3>Email</h3>
+                <a href="mailto:valorcup@schoolmail.com">valorcup@schoolmail.com</a>
+            </div>
+            <div class="contact-card">
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/valorcup2025" target="_blank">@valorcup2025</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Valor Cup. All rights reserved. | Mobile Legends Tournament</p>
+    </footer>
+
+    <!-- Registration Modal -->
+    <div class="modal" id="registrationModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <h2>Register Your Team</h2>
+            <form id="registrationForm">
+                <div class="form-group">
+                    <label>Team Name</label>
+                    <input type="text" id="teamName" required>
+                </div>
+                <div class="form-group">
+                    <label>Captain Name</label>
+                    <input type="text" id="captainName" required>
+                </div>
+                <div class="form-group">
+                    <label>Captain Email</label>
+                    <input type="email" id="captainEmail" required>
+                </div>
+                <div class="form-group">
+                    <label>Game ID of Team</label>
+                    <input type="text" id="gameId" required>
+                </div>
+                <button type="button" class="submit-btn" onclick="submitForm()">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+        <img id="lightboxImg" src="" alt="">
+    </div>
+
+    <!-- Success Popup -->
+    <div class="popup-overlay" id="popupOverlay" onclick="closeSuccessPopup()"></div>
+    <div class="success-popup" id="successPopup">
+        <div class="popup-icon">🏆</div>
+        <h2>Welcome to the Arena!</h2>
+        <div class="team-name-display" id="popupTeamName"></div>
+        <p>Your team has been successfully registered!<br>Good luck and may victory be yours!</p>
+        <button onclick="closeSuccessPopup()">Let's Go!</button>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confettiContainer"></div>
+
+    <script>
+        // Global Functions
+        function openModal() {
+            document.getElementById('registrationModal').classList.add('active');
+            document.getElementById('registrationForm').reset();
+        }
+
+        function closeModal() {
+            document.getElementById('registrationModal').classList.remove('active');
+        }
+
+        function submitForm() {
+            console.log('submitForm called!');
+            
+            const teamName = document.getElementById('teamName').value;
+            const captainName = document.getElementById('captainName').value;
+            const captainEmail = document.getElementById('captainEmail').value;
+            const gameId = document.getElementById('gameId').value;
+            
+            if (!teamName || !captainName || !captainEmail || !gameId) {
+                alert('Please fill in all fields!');
+                return;
+            }
+            
+            console.log('All fields filled, team:', teamName);
+            
+            closeModal();
+            
+            setTimeout(function() {
+                console.log('Showing popup!');
+                document.getElementById('popupTeamName').textContent = teamName;
+                document.getElementById('popupOverlay').classList.add('show');
+                document.getElementById('successPopup').classList.add('show');
+                
+                // Trigger confetti!
+                createConfetti();
+            }, 300);
+        }
+
+        function closeSuccessPopup() {
+            document.getElementById('popupOverlay').classList.remove('show');
+            document.getElementById('successPopup').classList.remove('show');
+            // Clear confetti
+            document.getElementById('confettiContainer').innerHTML = '';
+        }
+
+        function createConfetti() {
+            const container = document.getElementById('confettiContainer');
+            const colors = ['#00d4ff', '#f59e0b', '#06b6d4', '#fbbf24', '#ffffff'];
+            const confettiCount = 100;
+
+            console.log('Creating confetti!');
+
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                
+                const left = Math.random() * 100;
+                const delay = Math.random() * 0.5;
+                const duration = Math.random() * 2 + 2;
+                const color = colors[Math.floor(Math.random() * colors.length)];
+                const size = Math.random() * 8 + 4;
+                
+                confetti.style.left = left + '%';
+                confetti.style.top = '-20px';
+                confetti.style.animationDelay = delay + 's';
+                confetti.style.animationDuration = duration + 's';
+                confetti.style.background = color;
+                confetti.style.width = size + 'px';
+                confetti.style.height = size + 'px';
+                
+                // Random shapes
+                if (Math.random() > 0.5) {
+                    confetti.style.borderRadius = '50%';
+                }
+                
+                container.appendChild(confetti);
+                
+                // Remove confetti after animation
+                setTimeout(function() {
+                    if (confetti.parentNode) {
+                        confetti.remove();
+                    }
+                }, (duration + delay) * 1000);
+            }
+            
+            console.log('Confetti created! Count:', container.children.length);
+        }
+
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            document.getElementById('lightboxImg').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            
+            const track = document.querySelector('.carousel-track');
+            track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+        }
+
+        // Particle Animation
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const isMobile = window.innerWidth < 768;
+            const particleCount = isMobile ? 20 : 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                const size = Math.random() * 5 + 2;
+                const x = Math.random() * 100;
+                const y = Math.random() * 100;
+                const color = Math.random() > 0.5 ? '#00d4ff' : '#f59e0b';
+                const duration = Math.random() * 4 + 4;
+                const delay = Math.random() * 2;
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = x + '%';
+                particle.style.top = y + '%';
+                particle.style.background = color;
+                particle.style.animationDuration = duration + 's';
+                particle.style.animationDelay = delay + 's';
+                particle.style.boxShadow = '0 0 ' + (size * 2) + 'px ' + color;
+                
+                container.appendChild(particle);
+            }
+        }
+
+        // Scroll Reveal
+        function revealOnScroll() {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(function(section) {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        }
+
+        // Carousel variables
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.carousel-slide');
+        const totalSlides = slides.length;
+
+        // Initialize on page load
+        window.addEventListener('load', function() {
+            console.log('Page loaded!');
+            createParticles();
+            revealOnScroll();
+            
+            // Auto carousel
+            setInterval(function() {
+                moveCarousel(1);
+            }, 5000);
+        });
+
+        window.addEventListener('scroll', revealOnScroll);
+
+        // Close modal on outside click
+        document.getElementById('registrationModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+    </script>
+</body>
+</html>
